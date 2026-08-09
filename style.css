@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --page-color: #FFF;
+  --ink-color: #000;
+  --bold-ink-color: #000;
+  --table-border-color: #666;
+  --footnote-color: #666;
+  --page-number-color: #369;
+  --wip-color: #FFD;
+}
+body.dark {
+  --page-color: #111;
+  --ink-color: #999;
+  --bold-ink-color: #AAA;
+  --table-border-color: #666;
+  --footnote-color: #888;
+  --page-number-color: #69C;
+  --wip-color: #330;
+}
+body.old {
+  text-shadow: 0 0 2px #333;
+  --page-color: #FFFFF7;
+  --ink-color: #333;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+
+  background: var(--page-color);
+  color: var(--ink-color);
+
+  font-family: 'Noto Serif';
+  font-size: 13pt;
+  line-height: 18pt;
+}
+
+aside {
+  flex: 1;
+  padding: 1em 1em 0 0;
+}
+
+aside div {
+  position: sticky;
+  top: 1em;
+
+  transition: margin 0.3s ease-in-out;
+  margin-left: -50vw;
+  margin-right: 50vw;
+}
+aside:hover div {
+  transition: margin 0.3s ease-in-out;
+  margin-left: 0;
+  margin-right: 0;
+}
+aside nav {
+  font-size: 10pt;
+  line-height: 12pt;
+  padding: 1em;
+}
+aside nav ol {
+  list-style: upper-roman;
+}
+aside nav ol li {
+  margin-bottom: 6pt;
+}
+aside nav ol li.no-number {
+  list-style: none;
+}
+aside nav ol li.part {
+  margin-top: 16pt;
+  font-size: 12pt;
+}
+body.chapter-intro #chapter-intro-link,
+body.chapter-1 #chapter-1-link,
+body.chapter-2 #chapter-2-link,
+body.chapter-3 #chapter-3-link,
+body.chapter-4 #chapter-4-link,
+body.chapter-5 #chapter-5-link,
+body.chapter-6 #chapter-6-link,
+body.chapter-7 #chapter-7-link,
+body.chapter-8 #chapter-8-link,
+body.chapter-9 #chapter-9-link,
+body.chapter-10 #chapter-10-link,
+body.chapter-11 #chapter-11-link,
+body.chapter-12 #chapter-12-link,
+body.chapter-13 #chapter-13-link,
+body.chapter-14 #chapter-14-link,
+body.chapter-15 #chapter-15-link,
+body.chapter-16 #chapter-16-link {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+}
+aside nav a {
+  text-decoration: none;
+  color: inherit;
+}
+aside nav a:hover {
+  text-decoration: underline;
+}
+aside h1 {
+  text-transform: uppercase;  /* until we have proper smallcaps */
+  font-weight: normal;
+  text-align: center;
+  font-size: 18pt;
+  line-height: 24pt;
+  letter-spacing: 1px;
+  margin: 0;
+}
+aside h1 div {
+  font-size: 10pt;
+  line-height: 12pt;
+}
+aside h2 {
+  text-transform: uppercase;  /* until we have proper smallcaps */
+  font-size: 14pt;
+  line-height: 20pt;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0.5em 0;
+}
+aside h2 div {
+  font-size: 8pt;
+  line-height: 10pt;
+}
+main {
+  flex: 2;
+  margin: 2rem;
+  max-width: 37rem;
+  text-align: justify;
+  position: relative;  /* for page number positioning */
+}
+main h1 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 18pt;
+  line-height: 24pt;
+  letter-spacing: 1px;
+  margin: 0.5em 0;
+}
+main h1:first-of-type {
+  margin-top: 2em;
+}
+main h2 {
+  text-transform: uppercase;  /* until we have proper smallcaps */
+  font-size: 14pt;
+  line-height: 20pt;
+
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 1.5em 0 1em;
+}
+main h2 > .c {
+  text-transform: none;
+}
+h3 {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+  text-align: center;
+  font-size: 14pt;
+  line-height: 20pt;
+  margin: 1em 0 0.5em;
+}
+h4 {
+  text-transform: uppercase;  /* until we have proper smallcaps */
+  font-weight: normal;
+  text-align: center;
+  font-size: 14pt;
+  line-height: 20pt;
+  margin: 1em 0 0.5em;
+}
+h5 {
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  font-size: 14pt;
+  line-height: 20pt;
+  margin: 0.5em 0 0;
+}
+p {
+  margin: 0.5em 0;
+}
+.note {
+  font-size: 10pt;
+  line-height: 14pt;
+}
+
+.section-label {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+  margin-right: 0.5em;
+}
+.section-label > a {
+  color: inherit;
+  text-decoration: none;
+}
+.section-label > a:hover {
+  text-decoration: underline;
+}
+.item-label {
+  margin-right: 0.5em;
+}
+.item-label-bold {
+  margin-right: 0.5em;
+  font-weight: bold;
+  color: var(--bold-ink-color);
+}
+.item-label-bold-inline {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+}
+.note-label {
+  text-transform: uppercase;  /* until we have proper smallcaps */
+}
+.gloss {
+  font-style: italic;
+}
+
+.ref {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+  white-space: nowrap;
+}
+.phr, .w, .m, .c, .seg {
+  font-weight: bold;
+  color: var(--bold-ink-color);
+}
+.m, .c {
+  white-space: nowrap;
+}
+/* .grm {
+  font-style: italic;
+} */
+
+.bibl-title {
+  font-style: italic;
+}
+.ditto {
+  padding: 0 1.5em;
+}
+
+table {
+  margin: 1em auto;
+  min-width: 30rem;
+  border-collapse: collapse;
+}
+table caption {
+  margin: 1em 0;
+}
+td {
+  padding: 0px 10px;
+  font-size: 12pt;
+  white-space: nowrap;
+}
+table.border td {
+  padding: 5px 10px;
+  border: 1px solid var(--table-border-color);
+}
+td.right-bracket::after {
+  vertical-align: middle;
+  font-size: 200%;
+  content: ' {';
+}
+td.left-bracket::before {
+  vertical-align: middle;
+  font-size: 200%;
+  content: '} ';
+}
+.inline-block {
+  display: inline-block;
+  padding: 0.5em 0;
+}
+.center {
+  text-align: center;
+  padding: 0 1em;
+}
+.footnote {
+  color: var(--footnote-color);
+  margin: 0 0.5em;
+}
+.footnote::before {
+  content: '(';
+}
+.footnote::after {
+  content: ')';
+}
+div.float-list {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.5em 0;
+}
+div.float-list-head {
+  white-space: nowrap;
+  margin: 0 1em 0 0;
+}
+div.float-list-item {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+/* page breaks */
+span.pb > a {
+  text-decoration: none;
+  font-size: 10pt;
+  color: var(--page-number-color);
+  position: absolute;
+  right: 100%;
+  padding-right: 1em;
+  font-style: normal;
+  font-weight: normal;
+}
+span.pb > a::before {
+  content: 'p';
+}
+span.pb > a:hover {
+  text-decoration: underline;
+}
+
+/* for scripture */
+div.verse {
+  margin-left: 2em;
+  position: relative;
+}
+div.verse span.verse-label {
+  position: absolute;
+  right: 100%;
+  padding-right: 1em;
+}
+div.verse > span.pb > span {
+  /* a bit of a hack */
+  padding-right: 4.5em;
+}
+
+/* for glossary */
+div.entry {
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+div.entry .grm {
+  font-style: italic;
+}
+
+.status-wip {
+  background: var(--wip-color);
+}
+
+/* body .c,
+body .m,
+body .w,
+body .lang,
+body .grm,
+body .gloss,
+body .abbr,
+body .ref
+{
+  color: #EEE;
+} */
