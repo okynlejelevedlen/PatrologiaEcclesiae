@@ -359,3 +359,10 @@ body .ref
 {
   color: #EEE;
 } */
+
+/* SPECIAL*/
+.ipa {
+  font-style:normal;
+  font-size:small;
+  color: #369;
+}
